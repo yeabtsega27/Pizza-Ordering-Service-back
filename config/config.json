@@ -2,21 +2,21 @@
   "development": {
     "username": "yeabtsega",
     "password": "JQ4uHVLaHGGwk2wSxY9ba8YJSXtlrTUP",
-    "database": "pizza_ordering",
+    "database": "pizza",
     "host": "dpg-crte76m8ii6s73elfvu0-a",
     "dialect": "postgres"
   },
   "test": {
     "username": "yeabtsega",
     "password": "JQ4uHVLaHGGwk2wSxY9ba8YJSXtlrTUP",
-    "database": "pizza_ordering_test",
+    "database": "pizza_test",
     "host": "dpg-crte76m8ii6s73elfvu0-a",
     "dialect": "postgres"
   },
   "production": {
     "username": "yeabtsega",
     "password": "JQ4uHVLaHGGwk2wSxY9ba8YJSXtlrTUP",
-    "database": "pizza_ordering_production",
+    "database": "pizza_production",
     "host": "dpg-crte76m8ii6s73elfvu0-a",
     "dialect": "postgres"
   }
