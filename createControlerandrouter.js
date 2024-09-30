@@ -2,15 +2,16 @@ const fs = require("fs");
 
 // List of model names
 const MODELS = [
-  "Movie",
-  "Genre",
-  "MovieGenre",
-  "movelink",
-  "User",
-  "Like",
-  "Favorite",
-  "Season",
-  "Episode",
+  "Users",
+  "Topping",
+  "roles",
+  "rolepermission",
+  "restaurants",
+  "PizzaToppings",
+  "Pizza",
+  "Permission",
+  "OrderToppings",
+  "Orders",
 ];
 
 // Create the "routers" folder
