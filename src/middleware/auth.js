@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { Users, Permission, Roles } = require("../models");
+const { Users, Permission, Roles } = require("../../models");
 const { AbilityBuilder, Ability } = require("@casl/ability"); // Import CASL Ability
 require("dotenv").config();
 

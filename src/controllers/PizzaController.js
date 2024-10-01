@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { Pizza, Toppings, Restaurants } = require("../models");
+const { Pizza, Toppings, Restaurants } = require("../../models");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const {

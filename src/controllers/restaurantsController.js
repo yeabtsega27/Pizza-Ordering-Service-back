@@ -1,6 +1,6 @@
-const { sequelize } = require("../models"); // Ensure sequelize is properly imported
+const { sequelize } = require("../../models"); // Ensure sequelize is properly imported
 const bcrypt = require("bcrypt");
-const { Users, Restaurants, Orders, Pizza, Roles } = require("../models");
+const { Users, Restaurants, Orders, Pizza, Roles } = require("../../models");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const {

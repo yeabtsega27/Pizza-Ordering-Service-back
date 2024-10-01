@@ -1,5 +1,5 @@
 const { where } = require("sequelize");
-const { Users, Roles, Permission, RolePermission } = require("../models");
+const { Users, Roles, Permission, RolePermission } = require("../../models");
 const {
   createRoleSchema,
   assignRoleSchema,

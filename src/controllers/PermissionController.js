@@ -1,4 +1,4 @@
-const { Permission } = require("../models");
+const { Permission } = require("../../models");
 
 // Create a new permission
 exports.createPermission = async (req, res) => {

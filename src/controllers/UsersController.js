@@ -1,5 +1,5 @@
 // controllers/usersController.js
-const { Users, Restaurants, Roles } = require("../models");
+const { Users, Restaurants, Roles } = require("../../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { where } = require("sequelize");

@@ -10,13 +10,13 @@ const bcrypt = require("bcrypt");
 const path = require("path");
 
 //import routes
-const PermissionRouter = require("./routers/PermissionRouter");
-const RestaurantsRouter = require("./routers/restaurantsRouter");
-const RolesRouter = require("./routers/rolesRouter");
-const UsersRouter = require("./routers/UsersRouter");
-const PizzaRouter = require("./routers/PizzaRouter");
-const ToppingRouter = require("./routers/ToppingRouter");
-const ordersRoutes = require("./routers/OrdersRouter");
+const PermissionRouter = require("./src/routers/PermissionRouter");
+const RestaurantsRouter = require("./src/routers/restaurantsRouter");
+const RolesRouter = require("./src/routers/rolesRouter");
+const UsersRouter = require("./src/routers/UsersRouter");
+const PizzaRouter = require("./src/routers/PizzaRouter");
+const ToppingRouter = require("./src/routers/ToppingRouter");
+const ordersRoutes = require("./src/routers/OrdersRouter");
 
 // Middleware
 app.use(bodyParser.json());

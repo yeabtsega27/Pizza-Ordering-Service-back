@@ -1,4 +1,10 @@
-const { Orders, Pizza, Toppings, Users, OrderToppings } = require("../models");
+const {
+  Orders,
+  Pizza,
+  Toppings,
+  Users,
+  OrderToppings,
+} = require("../../models");
 const {
   createOrderSchema,
   updateOrderSchema,

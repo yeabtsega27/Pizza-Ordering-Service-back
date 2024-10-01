@@ -1,5 +1,5 @@
 const { where } = require("sequelize");
-const { Toppings, Restaurants } = require("../models");
+const { Toppings, Restaurants } = require("../../models");
 const {
   createToppingSchema,
   updateToppingSchema,
