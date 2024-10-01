@@ -10,8 +10,8 @@ const bcrypt = require("bcrypt");
 const path = require("path");
 
 //import routes
-const PermissionRouter = require("./src/routers/PermissionRouter");
 const RestaurantsRouter = require("./src/routers/restaurantsRouter");
+// const PermissionRouter = require("./src/routers/PermissionRouter");
 const RolesRouter = require("./src/routers/rolesRouter");
 const UsersRouter = require("./src/routers/UsersRouter");
 const PizzaRouter = require("./src/routers/PizzaRouter");
