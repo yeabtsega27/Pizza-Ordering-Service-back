@@ -2,22 +2,40 @@
   "development": {
     "username": "yeabtsega",
     "password": "JQ4uHVLaHGGwk2wSxY9ba8YJSXtlrTUP",
-    "database": "pizza",
-    "host": "dpg-crte76m8ii6s73elfvu0-a",
-    "dialect": "postgres"
+    "database": "pizza_r23e",
+    "host": "dpg-crte76m8ii6s73elfvu0-a.oregon-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "test": {
     "username": "yeabtsega",
     "password": "JQ4uHVLaHGGwk2wSxY9ba8YJSXtlrTUP",
-    "database": "pizza_test",
-    "host": "dpg-crte76m8ii6s73elfvu0-a",
-    "dialect": "postgres"
+    "database": "pizza_r23e_test",
+    "host": "dpg-crte76m8ii6s73elfvu0-a.oregon-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "production": {
     "username": "yeabtsega",
     "password": "JQ4uHVLaHGGwk2wSxY9ba8YJSXtlrTUP",
-    "database": "pizza_production",
-    "host": "dpg-crte76m8ii6s73elfvu0-a",
-    "dialect": "postgres"
+    "database": "pizza_r23e_production",
+    "host": "dpg-crte76m8ii6s73elfvu0-a.oregon-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
