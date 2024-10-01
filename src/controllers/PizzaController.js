@@ -20,7 +20,7 @@ exports.createPizza = async (req, res) => {
     name: req.body.name,
     price: req.body.price,
     addedToppings: JSON.parse(req.body.addedToppings),
-    selectedToppings: req.body.selectedToppings,
+    selectedToppings: JSON.parse(req.body.selectedToppings),
   });
   if (!result.success) {
     const errors = result.error.errors.map(

@@ -12,9 +12,9 @@ const {
 
 // Create an order
 exports.createOrder = async (req, res) => {
-  if (!req.ability.can("create", "Order")) {
-    return res.status(403).json({ msg: "Permission denied to edit toppings" });
-  }
+  // if (!req.ability.can("create", "Order")) {
+  //   return res.status(403).json({ msg: "Permission denied to edit toppings" });
+  // }
   const result = createOrderSchema.safeParse(req.body);
   if (!result.success) {
     const errors = result.error.errors.map(

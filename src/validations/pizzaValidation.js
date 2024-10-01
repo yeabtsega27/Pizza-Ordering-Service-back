@@ -12,13 +12,14 @@ const createPizzaSchema = z
         })
       )
       .optional(),
-    selectedToppings: z
-      .array(z.string())
-      .min(1, { msg: "At list one permissin is required" })
-      .optional(),
+    selectedToppings: z.array(z.number()).optional(),
   })
   .superRefine((data, ctx) => {
-    if (data.selectedToppings.length == 0 && data.addedToppings.length == 0) {
+    console.log("validation error");
+
+    console.log(data.selectedToppings);
+
+    if (data.selectedToppings === undefined && data.addedToppings.length == 0) {
       ctx.addIssue({
         path: ["selectedToppings"], // Specify where to attach the error message
         message: "you nedd to enter selectedToppings or add nw topings",

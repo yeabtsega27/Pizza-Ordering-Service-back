@@ -38,7 +38,7 @@ app.use((error, req, res, next) => {
   res.status(500).json({ error: "An error occurred" });
 });
 
-app.use("/api/v1/image", express.static(path.join(__dirname, "uploads")));
+app.use("/api/v1/image", express.static(path.join(__dirname, "./src/uploads")));
 
 // Routes
 
