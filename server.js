@@ -43,7 +43,7 @@ app.use("/api/v1/image", express.static(path.join(__dirname, "uploads")));
 // Routes
 
 app.use("/api/v1/permission", PermissionRouter);
-app.use("/api/v1/restaurants", RestaurantsRouter);
+// app.use("/api/v1/restaurants", RestaurantsRouter);
 app.use("/api/v1/roles", RolesRouter);
 app.use("/api/v1/users", UsersRouter);
 app.use("/api/v1/pizza", PizzaRouter);
