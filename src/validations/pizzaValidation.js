@@ -39,7 +39,7 @@ const editPizzaSchema = z.object({
       })
     )
     .optional(),
-  addedToppings: z.array(z.string()).optional(),
+  addedToppings: z.array(z.number()).optional(),
   removedToppings: z.array(z.number()).optional(),
 });
 
