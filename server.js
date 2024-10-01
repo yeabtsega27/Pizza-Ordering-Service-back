@@ -11,7 +11,7 @@ const path = require("path");
 
 //import routes
 const RestaurantsRouter = require("./src/routers/restaurantsRouter");
-// const PermissionRouter = require("./src/routers/PermissionRouter");
+const PermissionRouter = require("./src/routers/PermissionRouter");
 const RolesRouter = require("./src/routers/rolesRouter");
 const UsersRouter = require("./src/routers/UsersRouter");
 const PizzaRouter = require("./src/routers/PizzaRouter");
@@ -43,7 +43,7 @@ app.use("/api/v1/image", express.static(path.join(__dirname, "uploads")));
 // Routes
 
 app.use("/api/v1/restaurants", RestaurantsRouter);
-// app.use("/api/v1/permission", PermissionRouter);
+app.use("/api/v1/per", PermissionRouter);
 app.use("/api/v1/roles", RolesRouter);
 app.use("/api/v1/users", UsersRouter);
 app.use("/api/v1/pizza", PizzaRouter);
