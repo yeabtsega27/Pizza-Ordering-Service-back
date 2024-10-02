@@ -1,3 +1,4 @@
+const { Op } = require("sequelize");
 const fs = require("fs");
 const { Pizza, Toppings, Restaurants } = require("../../models");
 const path = require("path");
@@ -292,9 +293,27 @@ exports.getAllPizzasFromRestaurant = async (req, res) => {
 
 // Get all pizza for a restaurant
 exports.getAllPizzas = async (req, res) => {
+  const { search } = req.query;
+  console.log(search);
+
   try {
     const pizza = await Pizza.findAll({
-      include: [Toppings, Restaurants],
+      include: [
+        {
+          model: Toppings,
+        },
+        {
+          model: Restaurants,
+        },
+      ],
+      where: search
+        ? {
+            [Op.or]: [
+              { name: { [Op.iLike]: `%${search}%` } }, // Case-insensitive search on Pizza name
+              { "$Toppings.name$": { [Op.iLike]: `%${search}%` } }, // Case-insensitive search on Toppings name
+            ],
+          }
+        : undefined,
     });
 
     res.status(200).json({ pizza });
