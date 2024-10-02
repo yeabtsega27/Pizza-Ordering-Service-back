@@ -1,5 +1,5 @@
 // controllers/usersController.js
-const { Users, Restaurants, Roles } = require("../../models");
+const { Users, Restaurants, Roles, Permission } = require("../../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { where } = require("sequelize");
@@ -154,6 +154,15 @@ exports.loginUser = async (req, res) => {
     const user = await Users.findOne({
       where: { email: validatedData.data.email },
     });
+    var role = {};
+    if (user.sub_role) {
+      role = await Roles.findByPk(user.sub_role, {
+        include: {
+          model: Permission,
+          through: { attributes: [] }, // Exclude the join table attributes
+        },
+      });
+    }
 
     if (
       !user ||
@@ -184,6 +193,7 @@ exports.loginUser = async (req, res) => {
         restaurantsId: user.restaurantsId,
         name: user.name,
         email: user.email,
+        Permissions: role?.Permissions,
       },
     });
   } catch (error) {

@@ -24,7 +24,6 @@ const defineAbilitiesFor = (user, role) => {
     }
   } else if (user.role === "customer") {
     // Customer abilities (create and read their own orders and profile)
-    can("create", "Order");
     can("read", "Order", { customerId: user.id });
   }
 
@@ -37,6 +36,7 @@ const defineAbilitiesFor = (user, role) => {
 const auth = (req, res, next) => {
   // Get the token from the Authorization header
   const authHeader = req.headers.authorization;
+  console.log(authHeader);
 
   if (authHeader) {
     // Extract the token from the "Bearer" scheme

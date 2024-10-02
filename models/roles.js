@@ -8,9 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: "CASCADE",
       });
       Roles.belongsToMany(models.Permission, {
-        through: "RolePermission",
+        through: models.RolePermission,
         foreignKey: "roleId",
-        otherKey: "permissionId",
       });
     }
   }

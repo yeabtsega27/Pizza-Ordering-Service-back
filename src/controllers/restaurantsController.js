@@ -1,3 +1,4 @@
+const fs = require("fs");
 const { sequelize } = require("../../models"); // Ensure sequelize is properly imported
 const bcrypt = require("bcrypt");
 const { Users, Restaurants, Orders, Pizza, Roles } = require("../../models");
@@ -5,6 +6,7 @@ const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const {
   createRestaurantSchema,
+  editeRestaurantSchema,
 } = require("../validations/restaurantValidation");
 
 // Get all restaurants or a specific restaurant by ID
@@ -57,20 +59,22 @@ exports.updateRestaurant = async (req, res) => {
       .status(403)
       .json({ msg: "Permission denied to edite Restaurant" });
   }
-  const { id } = req.params;
+  const result = editeRestaurantSchema.safeParse(req.body);
+  if (!result.success) {
+    const errors = result.error.errors.map(
+      (err) => err.path[0] + " " + err.message
+    );
+
+    return res.status(400).json({ errors });
+  }
   const { name, location } = req.body;
 
   try {
     // Find restaurant by ID
-    let restaurant = await Restaurants.findByPk(id);
+    let restaurant = await Restaurants.findByPk(req.user.restaurantsId);
 
     if (!restaurant) {
       return res.status(404).json({ msg: "Restaurant not found" });
-    }
-    if (!restaurant.id == req.user.restaurantsId) {
-      return res
-        .status(403)
-        .json({ msg: "Permission denied to edite Restaurant" });
     }
 
     // Check if there's a new logo image to upload
@@ -158,7 +162,6 @@ exports.createRestaurant = async (req, res) => {
     const errors = result.error.errors.map(
       (err) => err.path[0] + " " + err.message
     );
-    console.log(result);
 
     return res.status(400).json({ errors });
   }

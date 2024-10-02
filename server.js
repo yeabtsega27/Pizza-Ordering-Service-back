@@ -4,8 +4,6 @@ const cors = require("cors");
 const app = express();
 const { sequelize } = require("./models"); // Assuming your Sequelize instance is defined in a models/index.js file
 const fileUpload = require("express-fileupload");
-const { User } = require("./models");
-const bcrypt = require("bcrypt");
 
 const path = require("path");
 
@@ -17,6 +15,7 @@ const UsersRouter = require("./src/routers/UsersRouter");
 const PizzaRouter = require("./src/routers/PizzaRouter");
 const ToppingRouter = require("./src/routers/ToppingRouter");
 const ordersRoutes = require("./src/routers/OrdersRouter");
+const DashboardRouter = require("./src/routers/DashboardRouter");
 
 // Middleware
 app.use(bodyParser.json());
@@ -49,6 +48,7 @@ app.use("/api/v1/users", UsersRouter);
 app.use("/api/v1/pizza", PizzaRouter);
 app.use("/api/v1/topping", ToppingRouter);
 app.use("/api/v1/orders", ordersRoutes);
+app.use("/api/v1/dashboard", DashboardRouter);
 
 // Sync Sequelize models with the database
 sequelize

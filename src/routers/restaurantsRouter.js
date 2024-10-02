@@ -13,7 +13,7 @@ router.get("/:id", restaurantController.getRestaurant);
 router.get("/", restaurantController.getAllRestaurant);
 
 // Route for updating a restaurant
-router.put("/update/:id", auth, restaurantController.updateRestaurant);
+router.put("/", auth, restaurantController.updateRestaurant);
 
 // Route for deleting a restaurant
 router.delete("/delete/:id", auth, restaurantController.deleteRestaurant);

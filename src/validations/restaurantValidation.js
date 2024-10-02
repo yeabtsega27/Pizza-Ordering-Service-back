@@ -14,4 +14,9 @@ const createRestaurantSchema = z.object({
   restaurant_name: z.string().min(1, { msg: "Restaurant name is required" }),
   logo: z.any(), // We will validate the logo file separately
 });
-module.exports = { createRestaurantSchema };
+const editeRestaurantSchema = z.object({
+  name: z.string().min(1, { msg: "Name is required" }),
+  location: z.string().min(1, { msg: "Location is required" }),
+  logo: z.any().optional(), // We will validate the logo file separately
+});
+module.exports = { createRestaurantSchema, editeRestaurantSchema };
