@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const { sequelize } = require("./models"); // Assuming your Sequelize instance is defined in a models/index.js file
 const fileUpload = require("express-fileupload");
+const PORT = process.env.PORT || 4000;
 
 const path = require("path");
 
